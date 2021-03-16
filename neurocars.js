@@ -1,4 +1,4 @@
-const TOPLAM_ARABA = 50;
+const TOPLAM_ARABA = 20;
 
 let arabalar = [];
 let kaydedilenArabalar = [];

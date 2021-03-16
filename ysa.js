@@ -83,11 +83,13 @@ class YapaySinirAgi{
         inputShape: [this.girdi_dugumler],
         activation: 'sigmoid',
       });
+      
       model.add(gizli_katman);
       const cikti_katman = tf.layers.dense({
         units: this.cikti_dugumler,
         activation : 'softmax',
       });
+      
       model.add(cikti_katman);
       //this.model.compile({}); 
       return model;
