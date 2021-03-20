@@ -123,21 +123,30 @@ class Araba{
 
   cizdir(){
     push();
-      stroke(0);
+      //stroke(0);
+      //fill(255,0,0);
       fill(255,0,0);
-      translate(this.x , this.y);
-      rotate(-this.aci);
-      rect(-this.w/2, -this.h/2, this.w, this.h);
+      stroke(0);
+      translate(this.x , this.y, 10);
+      scale(0.4);
+      //scale(0.35);
+      rotateX(90 );
+      rotateY(90-this.aci);
+      rotateZ(0);
+      //rect(-this.w/2, -this.h/2, this.w, this.h);
+      model(arabaModel);
     pop();
 
     stroke(255);
     fill(255);
     
+    /*
     ellipse(this.x , this.y,  2 ,2);
     ellipse(this.solOnNokta_x, this.solOnNokta_y, 2, 2);
     ellipse(this.sagOnNokta_x, this.sagOnNokta_y, 2, 2);
     ellipse(this.solArkaNokta_x, this.solArkaNokta_y, 2, 2);
     ellipse(this.sagArkaNokta_x, this.sagArkaNokta_y, 2, 2);
+    */
 
     stroke(0,0,255);
     line(this.x, this.y, this.x + this.solIsinUzunluk * cos(-this.aci-90), this.y + this.solIsinUzunluk * sin(-this.aci-90));

@@ -1,4 +1,4 @@
-const TOPLAM_ARABA = 20;
+const TOPLAM_ARABA = 25;
 
 let arabalar = [];
 let kaydedilenArabalar = [];
@@ -6,18 +6,25 @@ let jenerasyon = 1;
 
 let pistResim;
 let baslangicX = 350;
-let baslangicY = 520;
+let baslangicY = 450;
 let araba;
 
+
 function preload(){
-  pistResim = loadImage("kaynaklar/pist.jpg");
+  pistResim = loadImage("kaynaklar/pist2.jpg");
+  arabaModel = loadModel('kaynaklar/race.obj', true);
 }
 
 function setup(){
   tf.setBackend('cpu');
   noSmooth();
-  createCanvas(800, 600);
+  frameRate(30);
+  
+   
+
+  createCanvas(800, 600, WEBGL);
   angleMode(DEGREES);
+
 
   for(let i = 0; i < TOPLAM_ARABA; i++){
     arabalar[i] = new Araba();
@@ -42,9 +49,10 @@ function draw(){
   if(arabalar.length === 0){
     sonrakiNesil();
   }
-  
-  
-  
+   camera(0, 550, 250,0,0,0, 0, 1, 0);
+  background(255);
+  //orbitControl();
+  translate(-width/2, -height/2);
   image(pistResim, 0, 0);
 
   for(let araba of arabalar){
